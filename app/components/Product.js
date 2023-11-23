@@ -8,7 +8,7 @@ const Product = ({ item }) => {
   const { img, name } = item;
   return (
     <TouchableOpacity style={styles.item} onPress={() => navigation.navigate(Routes.Detail, { item })}>
-      <View style={{ width: "100%" }}>
+      <View style={styles.width}>
         <Image resizeMode="contain" style={styles.image} source={{ uri: img }} />
         <Text style={styles.name}>{name}</Text>
       </View>
@@ -29,6 +29,9 @@ const styles = StyleSheet.create({
   name: {
     marginTop: 10,
     textAlign: "center"
+  },
+  width: {
+    width: "100%"
   }
 })
 

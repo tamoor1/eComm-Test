@@ -1,15 +1,15 @@
 const useApi = () => {
 
-  const BASE_URL = "https://my-json-server.typicode.com/benirvingplt/products/";
+  const BASE_URL: string = "https://my-json-server.typicode.com/benirvingplt/products/";
 
-  const headers = {
+  const headers: any = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
   }
 
-  const get = (endpoint) => {
+  const get = (endpoint: string):Promise<any> => {
     return new Promise((resolve, reject) => {
-      fetch(BASE_URL + endpoint, {
+      fetch(`${BASE_URL}${endpoint}`, {
         method: "GET",
         headers: headers
       })
@@ -19,9 +19,9 @@ const useApi = () => {
     })
   }
 
-  const post = (endpoint, body) => {
+  const post = (endpoint: string, body: any): Promise<any> => {
     return new Promise((resolve, reject) => {
-      fetch(BASE_URL + endpoint, {
+      fetch(`${BASE_URL}${endpoint}`, {
         method: "POST",
         headers: headers,
         body: JSON.stringify(body)
